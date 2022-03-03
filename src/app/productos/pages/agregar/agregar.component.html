@@ -1,25 +1,33 @@
 <h1 class="mt-5">Agregar producto</h1>
 <hr>
 
-<div class="row aling-items-center mb-3">
-
-    <div class="col-auto">
-        <label class="form-label">Nombre:</label>
-    </div>
-
-    <div class="col-auto">
-        <input class="form-control">
-    </div>
+<form [formGroup]="miFormulario">
+    <div class="row aling-items-center mb-3">
     
-    <div class="col">
-      <span class="form-text">Este campo es requerido.</span>  
-    </div>
+        <div class="col-auto">
+            <label class="form-label">Nombre:</label>
+        </div>
     
-</div>
+        <div class="col-auto">
+            <input formControlName="nombre"
+                   class="form-control">
+        </div>
+        
+        <div class="col"
+             *ngIf="tieneError('nombre')">
+          <span class="form-text">Este campo es requerido.</span>  
+        </div>
+        
+    </div>
+</form>
+
+
 
 <button class="btn btn-primary float-end mt-3">
     Guardar
 </button>
 
 <h3 class="mt-5">Formulario</h3>
+<pre>Valid: {{ miFormulario.valid }}</pre>
+<pre>Value: {{ miFormulario.value | json }}</pre>
 
