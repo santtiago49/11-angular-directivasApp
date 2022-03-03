@@ -13,10 +13,11 @@
                    class="form-control">
         </div>
         
-        <div class="col"
-             error-msg
-             *ngIf="tieneError('nombre')">
-          <span class="form-text">Este campo es requerido.</span>  
+        <div class="col" *ngIf="tieneError('nombre')">
+            <span error-msg
+                  class="form-text">
+                  Este campo es requerido.
+            </span>  
         </div>
         
     </div>
