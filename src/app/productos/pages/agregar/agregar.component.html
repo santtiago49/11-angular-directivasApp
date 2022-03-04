@@ -1,4 +1,4 @@
-<h1 class="mt-5">Agregar producto <small>{{texto1}}</small></h1>
+<h1 class="mt-5">Agregar producto </h1>
 <hr>
 
 <form [formGroup]="miFormulario">
@@ -14,7 +14,9 @@
         </div>
         
         <div class="col" *ngIf="tieneError('nombre')">
-            <span error-msg [mensaje]="texto1" [color]="color">
+            <span error-msg 
+                  [color]="color"
+                  [valido]="tieneError('nombre')">
             </span>  
         </div>
         
