@@ -1,4 +1,4 @@
-<h1 class="mt-5">Agregar producto</h1>
+<h1 class="mt-5">Agregar producto <small>{{texto1}}</small></h1>
 <hr>
 
 <form [formGroup]="miFormulario">
@@ -14,7 +14,7 @@
         </div>
         
         <div class="col" *ngIf="tieneError('nombre')">
-            <span error-msg mensaje="Este campo es re re requerido">
+            <span error-msg [mensaje]="texto1" [color]="color">
             </span>  
         </div>
         
@@ -23,11 +23,19 @@
 
 
 
-<button class="btn btn-primary float-end mt-3">
+<button class="btn btn-primary mt-3 "
+        (click)="cambiarNombre()">
     Guardar
+</button>
+
+&nbsp;
+<button class="btn btn-primary mt-3"
+        (click)="cambiarColor()">
+    Cambiar color
 </button>
 
 <h3 class="mt-5">Formulario</h3>
 <pre>Valid: {{ miFormulario.valid }}</pre>
 <pre>Value: {{ miFormulario.value | json }}</pre>
+
 
